@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Socket io</title>
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div id="vueApp">
+        <form @submit.prevent="onMessage()">
+            <input type="text" v-model="message.id" disabled>
+            <input type="text" v-model="message.msg">
+            <button type="submit">Send message</button>
+        </form>
+
+        <ul>
+            <li v-for="item in messages">
+                <strong>
+                    <small>{{ item.id }} :</small>
+                </strong>
+                <span>{{ item.msg }}</span>
+            </li>
+        </ul>
+    </div>
+    <!-- javascripts -->
+    <script src="./assets/js/vue.js"></script>
+    <script src="./assets/js/socket.io.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
